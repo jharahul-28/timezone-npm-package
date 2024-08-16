@@ -12,7 +12,14 @@
     "url": "git+https://github.com/jharahul-28/timezone-npm-package.git"
   },
   "keywords": [
-    "timezone"
+    "timezone",
+    "getUTCOffset",
+    "convertTime",
+    "convertToUTC",
+    "listTimezones",
+    "getCurrentTimeInTimezone",
+    "getTimeDifference",
+    "convertDateToTimezone"
   ],
   "author": "Rahul Jha",
   "license": "ISC",
