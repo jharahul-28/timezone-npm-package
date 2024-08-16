@@ -1,6 +1,6 @@
 {
   "name": "@jha28rahul/timezone",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Package that assists in handling timezone related tasks.",
   "main": "index.js",
   "type": "commonjs",
