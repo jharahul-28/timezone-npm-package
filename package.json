@@ -1,0 +1,23 @@
+{
+  "name": "@jha28rahul/timezone",
+  "version": "1.0.0",
+  "description": "Package that assists in handling timezone related tasks.",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jharahul-28/timezone-npm-package.git"
+  },
+  "keywords": [
+    "timezone"
+  ],
+  "author": "Rahul Jha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jharahul-28/timezone-npm-package/issues"
+  },
+  "homepage": "https://github.com/jharahul-28/timezone-npm-package#readme"
+}
