@@ -1,6 +1,5 @@
 const timezones = require("./timezones.js");
 
-// Check if DST is applicable
 function isDST(timezone, date = new Date()) {
     const tz = timezones[timezone];
     if (!tz || !tz.dst) return false;
@@ -10,7 +9,7 @@ function isDST(timezone, date = new Date()) {
     return Math.max(jan, jul) !== date.getTimezoneOffset();
 }
 
-// Get UTC offset based on timezone
+// UTC offset
 function getUTCOffset(timezone) {
     const tz = timezones[timezone];
     if (!tz) throw new Error('Invalid timezone');
@@ -28,7 +27,7 @@ function getUTCOffset(timezone) {
     return `${sign}${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
 }
 
-// Convert time from one timezone to another
+// Time from one timezone to another
 function convertTime(time, fromTimezone, toTimezone) {
     const fromOffset = getUTCOffset(fromTimezone);
     const toOffset = getUTCOffset(toTimezone);
@@ -54,17 +53,16 @@ function convertTime(time, fromTimezone, toTimezone) {
     return date.toISOString().replace('T', ' ').slice(0, 19);
 }
 
-// All available timezones
 function listTimezones() {
     return Object.keys(timezones);
 }
 
-// Current time in any timezone
+// Time in any timezone
 function getCurrentTimeInTimezone(timezone) {
     return convertTime(new Date().toISOString(), 'UTC', timezone);
 }
 
-// Time difference between two timezones in hours
+// Timezones time difference
 function getTimeDifference(fromTimezone, toTimezone) {
     const fromOffset = getUTCOffset(fromTimezone);
     const toOffset = getUTCOffset(toTimezone);
@@ -82,7 +80,7 @@ function getTimeDifference(fromTimezone, toTimezone) {
     return differenceInMinutes / 60;
 }
 
-// Convert date to a different timezone
+// Date to a different timezone
 function convertDateToTimezone(date, fromTimezone, toTimezone) {
     const convertedTime = convertTime(date + ' 00:00:00', fromTimezone, toTimezone);
     return convertedTime.slice(0, 10);
